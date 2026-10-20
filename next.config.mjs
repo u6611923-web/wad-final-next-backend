@@ -1,5 +1,10 @@
 
 /** @type {import('next').NextConfig} */
+
+const allowedOrigin =
+  process.env.FRONTEND_URL ||
+  "http://localhost:5173";
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -10,7 +15,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "http://localhost:5173",
+            value: allowedOrigin,
           },
           {
             key: "Access-Control-Allow-Methods",
